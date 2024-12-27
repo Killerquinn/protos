@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package video;
+
+option go_package = "github.com/killerquinn/vdgen; vdgen";
+
+service VideoManage{
+    rpc GetVideoInfo (AboutVideoRequest) returns (AboutVideoResponse);
+    rpc GetVideo (VideoFileRequest) returns (VideoFileResponse);
+}
+
+message AboutVideoRequest{
+    string video_url = 1;
+}
+
+message AboutVideoResponse{
+    string title = 1;
+    string author = 2;
+    int64 duration = 3; //duration in seconds
+    string description = 4;
+}
+
+message VideoFileRequest{
+    string video_url = 1;
+}
+
+message VideoFileResponse{
+    bytes video = 1;
+    int64 size = 2; //size in bytes
+}
+

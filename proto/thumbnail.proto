@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package thumbnail;
+
+option go_package = "github.com/killerquinn/tbgen; tbgen";
+
+service GetThumbnails{
+    rpc Request (ThumbnailRequest) returns (ThumbnailResponse);
+}
+
+message ThumbnailRequest{
+    string videourl = 1;
+}
+
+message ThumbnailResponse{
+    string thumbnail_url = 1;
+}
+
+
+
+
+
+
+
+
+
+
