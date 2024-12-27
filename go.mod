@@ -1,4 +1,4 @@
-module protos
+module github.com/killerquinn/protos
 
 go 1.23.4
 
